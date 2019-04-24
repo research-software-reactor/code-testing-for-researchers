@@ -12,7 +12,8 @@ Taking the example of [Jenkins](https://jenkins.io/) as a widespread research CI
   * Understanding of how to manage and monitor incurred costs from on-demand deployments
   * Learning how to replicate a cloud environment locally to debug failures
 * Customised deployment of Jenkins with AKS
-  * Understanding the capabilities and limitations of AKS for research CI jobs
+  * Learning how to quickly deploy a templated, customised Jenkins instance on AKS
+  * Understanding the capabilities and limitations of AKS for research CI
 * Using cloud resources for effective and efficient performance testing of large tests
 
 ## Learning prerequisites
