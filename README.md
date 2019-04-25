@@ -24,6 +24,7 @@ Requiring an individual or small research group to set up and maintain a custom 
 
 * Identify areas where Azure Pipelines could be improved to support research software needs
 * Identify shortfalls in AKS which would improve AKS+Jenkins for research software
+* Use devito, firedrake, and fluidity testing as specific examples in learning materials
 
 ## Learning prerequisites
 
