@@ -9,9 +9,9 @@ But a research software project developed and maintained by an individual scient
 Specific examples of this would be:
 
 * Research software that is tested by running cut-down versions of real world problems, but still require an order of magnitude more resources than available on a standard hosted CI worker node
-* Test platforms that require software to be containerised, but none of the researchers are aware of what containers are or how to implement them
+* Test platforms that require software to be containerised, but none of the researchers are aware of what containers are or how to implement them beyond basic methods
 * Learning materials for deploying custom testing platforms which assume basic devops/syadmin background and are sufficiently opaque to researchers that they do not make use of them
-* Test platforms hosted on kubernetes where researchers are unaware of kubernetes and are put off by the added layer of learning to maintain the service
+* Test platforms hosted on kubernetes where researchers are unaware of kubernetes and are put off by the added layer of learning needed to maintain the service
 
 Requiring an individual or small research group to set up and maintain a custom testing platform is generally an inefficient use of their time, and improving hosted CI provision to cater for research software needs is a far more sensible route to take. In the case where researchers have a reasonable level of sysadmin knowledge to the point they can reasonably deploy and maintain a custom testing platform (ie, Jenkins on AKS) they hit problems arising from the differences between standard applications and research software. For example:
 
