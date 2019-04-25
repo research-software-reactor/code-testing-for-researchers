@@ -1,4 +1,4 @@
-# CI - barriers faced by researchers
+# Opening up cloud CI for researchers
 
 Effective testing is critical for research software projects. During development, good testing practise helps to quickly identify software problems and maintain code quality. When software is operational, ongoing testing ensures that any changes to the software do not break required scientific functionality. Building and testing in a precisely specified environment ensures reliability and reproduceability.
 
