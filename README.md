@@ -4,7 +4,7 @@ Effective testing is critical for research software projects. During development
 
 Cloud resources are often key to good testing, either in the form of hosted CI solutions such as Azure pipelines or through access to on-demand resources for infrequent resource-intensive test runs where full-time dedicated hardware would be prohibitively expensive.
 
-But a research software project developed and maintained by an individual scientist or small research group may struggle to implement effective automated testing. Hosted testing such as Azure pipelines or Travis CI are aimed at applications developers and often poorly suited to research software. But scientific programmers are generally not systems administrators and have neither time nor inclination to learn the background skills needed to run a custom testing platform -- they are focused on the science, not the infrastructure.
+But a research software project developed and maintained by an individual scientist or small research group may struggle to implement effective automated testing. Hosted testing such as Azure pipelines or Travis CI are aimed at applications developers and often not well suited to research software. But scientific programmers are generally not systems administrators and have neither time nor inclination to learn the background skills needed to run a custom testing platform -- they are focused on the science, not the infrastructure.
 
 Specific examples of this would be:
 
