@@ -1,4 +1,4 @@
-# CI - barriers to entry for researchers
+# CI - barriers faced by researchers
 
 A research software project developed and maintained by an individual scientist or small research group may struggle to implement effective automated testing due to unsuitability of existing hosted solutions and a lack of available systems administration knowledge to set up a custom solution.
 
