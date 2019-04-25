@@ -1,29 +1,25 @@
 # CI - barriers faced by researchers
 
-A research software project developed and maintained by an individual scientist or small research group may struggle to implement effective automated testing due to unsuitability of existing hosted solutions and a lack of available systems administration knowledge to set up a custom solution.
+A research software project developed and maintained by an individual scientist or small research group may struggle to implement effective automated testing. Hosted testing such as Azure pipelines or Travis CI are aimed at applications developers and often poorly suited to research software. But scientific programmers are generally not systems administrators and have neither time nor inclination to learn the background skills needed to run a custom testing platform -- they are focused on the science, not the infrastructure.
 
 Specific examples of this would be:
 
-* Testing frameworks requiring containerisation where none of the developers have any experience of containers
-* Software testing of real-world examples that require more resources than hosted solutions such as Azure pipelines or Travis provide
-* Documentation for deploying custom testing on cloud platforms (such as Jenkins on Azure) which is written assuming some sysadmin background and seems opaque to a scientific programmer
-* Solutions using kubernetes where developers do not have the time (or inclination) to invest in learning about kubernetes
+* Research software that is tested by running cut-down versions of real world problems, but still require an order of magnitude more resources than available on a standard hosted CI worker node
+* Test platforms that require software to be containerised, but none of the researchers are aware of what containers are or how to implement them
+* Learning materials for deploying custom testing platforms which assume basic devops/syadmin background and are sufficiently opaque to researchers that they do not make use of them
+* Test platforms hosted on kubernetes where researchers are unaware of kubernetes and are put off by the added layer of learning to maintain the service
 
-Further barriers are encountered when there is a basic level of systems administration skill but custom testing platforms have barriers to effective research software testing. For example:
+Requiring an individual or small research group to set up and maintain a custom testing platform is generally an inefficient use of their time, and improving hosted CI provision to cater for research software needs is a far more sensible route to take. In the case where researchers have a reasonable level of sysadmin knowledge to the point they can reasonably deploy and maintain a custom testing platform (ie, Jenkins on AKS) they hit problems arising from the differences between standard applications and research software. For example:
 
-* Large projects lean heavily on github which disables their access due to overuse
+* Large projects lean heavily on github, which then temporarily disables their access due to overuse
 * Effective testing needs a variety of vm types, and AKS only supports a single nodepool per cluster
-* Handling short-lifetime containers in both cost- and speed-efficient ways within the testing framework is difficult
+* Research software containers can be very large and hence difficult to handle in cost- and time-efficient ways
 * Documentation tends to be written assuming application deployment, not research software development
-
-Some projects will fit neatly into existing hosted solutions such as Azure pipelines or Travis. This sprint proposal aims to improve support for the research software projects that need a custom solution to fit their needs, and proposes Jenkins on Azure as a solid basic platform, as strong existing learning materials should be able to be modified to make them more suited to use by research programmers.
 
 ## Sprint objectives
 
-* Review the existing Jenkins on Azure documentation, identifying where assumptions are made about basic sysadmin knowledge and making materials more accessable to research programmers
-* Produce a learning pathway for a research group wanting automated testing of their software on a real-world, resource-intensive problem
-* Identify shortfalls in AKS+Jenkins and Azure pipelines to make them more useful for research software testing
-
+* Identify areas where Azure Pipelines could be improved to support research software needs
+* Identify shortfalls in AKS which would improve AKS+Jenkins for research software
 
 ## Learning prerequisites
 
