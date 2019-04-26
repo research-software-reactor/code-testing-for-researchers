@@ -25,7 +25,7 @@ Requiring an individual or small research group to set up and maintain a custom 
 * Identify and submit bug reports / feature requests on Pipelines where it falls short of research software requirements,
 primarily in terms of flexibility on worker node specifications
 * Identify shortfalls in AKS which would improve AKS+Jenkins for research software, in particular looking at heterogeneous worker nodes
-* Generate learning materials for handling large, low-value container images
+* Generate learning materials for handling large, low-value container images within CI
 * Generate learning materials which reduce existing technical learning to a level that is accessable and useful to non-technical researchers
 * Use devito, firedrake, and fluidity testing as specific examples in learning materials
 
