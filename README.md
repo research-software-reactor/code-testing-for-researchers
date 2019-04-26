@@ -1,19 +1,19 @@
 # Opening up cloud CI for researchers
 
-Effective testing is critical for research software projects. During development, good testing practise helps to quickly identify software problems and maintain code quality. When software is operational, ongoing testing ensures that any changes to the software do not break required scientific functionality. Building and testing in a precisely specified environment ensures reliability and reproduceability.
+Research software needs to be tested effectively. During development, good testing practise helps to quickly identify software problems and maintain code quality. When software is operational, ongoing testing ensures that any evolutionary changes to the software do not break required scientific functionality. Building and testing in a precisely specified environment ensures reliability and reproduceability, critical for generating publishable results.
 
-Cloud resources are often key to good testing, either in the form of hosted CI solutions such as Azure pipelines or through access to on-demand resources for infrequent resource-intensive test runs where full-time dedicated hardware would be prohibitively expensive.
+Cloud resources are often key to good testing, either in the form of hosted testing solutions such as Azure pipelines or through access to on-demand resources for infrequent resource-intensive tests where full-time dedicated hardware would be prohibitively expensive.
 
-But a research software project developed and maintained by an individual scientist or small research group may struggle to implement effective automated testing. Hosted testing such as Azure pipelines or Travis CI are aimed at applications developers and often not well suited to research software. Scientific programmers are generally not systems administrators and have neither time nor inclination to learn the background skills needed to run and customise a testing platform to their needs -- they are focused on the science, not the infrastructure.
+Standard application development is well supported by hosted testing platforms, and large technical software projects with devops support are well provided for by custom CI solutions. Research software often falls into a support hole, being far more demanding on test resources than standard applications, but developed by an individual scientist or small research team with minimal or no background in systems administration and little time or inclination to learn the skills necessary for building and maintaining a non-standard CI implementation. 
 
 Specific examples of this would be:
 
 * Research software that is tested by running cut-down versions of real world problems, but still require an order of magnitude more resources than available on a standard hosted CI worker node
 * Test platforms that require software to be containerised, but none of the researchers are aware of what containers are or how to implement them beyond basic methods
-* Learning materials for deploying custom testing platforms which assume basic devops/syadmin background and are sufficiently opaque to researchers that they do not make use of them
+* Learning materials for deploying custom testing platforms tend to be written for a technical reader and are sufficiently opaque to scientific but non-technical researchers that they do not make use of them
 * Test platforms hosted on kubernetes where researchers are unaware of kubernetes and are put off by the added layer of learning needed to maintain the service
 
-Requiring an individual or small research group to set up and maintain a custom testing platform is generally an inefficient use of their time, and improving hosted CI provision to cater for research software needs is a far more sensible route to take. In the case where researchers have a reasonable level of sysadmin knowledge to the point they can reasonably deploy and maintain a custom testing platform (ie, Jenkins on AKS) they hit problems arising from the differences between standard applications and research software. For example:
+Requiring an individual or small research group to set up and maintain a custom testing platform is generally an inefficient use of their time, and improving hosted testing provision to cater for research software needs is a more efficient route to take. In the case where researchers have a reasonable level of sysadmin knowledge to the point they can reasonably deploy and maintain a custom testing platform (ie, Jenkins on AKS) they hit problems arising from the differences between standard applications and research software. For example:
 
 * Large projects lean heavily on github, which temporarily disables their access due to overuse
 * Effective testing needs a variety of vm types, and AKS only supports a single nodepool per cluster
