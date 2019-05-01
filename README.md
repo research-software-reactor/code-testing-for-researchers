@@ -15,7 +15,7 @@ Specific examples of this would be:
 
 Requiring an individual or small research group to set up and maintain a custom testing platform is generally an inefficient use of their time, and improving hosted testing provision to cater for research software needs is a more efficient route to take. In the case where researchers have a reasonable level of sysadmin knowledge to the point they can reasonably deploy and maintain a custom testing platform (ie, [Jenkins](https://wiki.jenkins.io/display/JENKINS/Meet+Jenkins) on [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/)) they hit problems arising from the differences between standard applications and research software. For example:
 
-* Large projects lean heavily on [github](https://en.wikipedia.org/wiki/GitHub}, which temporarily disables their access due to overuse
+* Large projects lean heavily on [github](https://en.wikipedia.org/wiki/GitHub), which temporarily disables their access due to overuse
 * Effective testing needs a variety of [Virtual Machine (VM)](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/) types, and AKS only supports a single [nodepool](https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#nodes-and-node-pools) per cluster
 * Research software containers can be very large and hence difficult to handle in cost- and time-efficient ways
 * Documentation tends to be written assuming application deployment, not research software development
