@@ -1,4 +1,4 @@
-# Opening up cloud CI for researchers
+# Opening up cloud testing for researchers
 
 Research software needs to be tested effectively. During development, good testing practise helps to quickly identify software problems and maintain code quality. When software is operational, ongoing testing ensures that any evolutionary changes to the software do not break required scientific functionality. Building and testing in a precisely specified environment ensures reliability and reproduceability, critical for generating publishable results.
 
