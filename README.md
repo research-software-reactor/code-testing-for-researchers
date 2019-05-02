@@ -1,4 +1,4 @@
-# Opening up customised cloud testing for researchers
+# Supporting customised cloud testing for researchers
 
 Research software needs to be [tested effectively](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-continuous-integration). When bugs are introduced during development, testing helps quickly identify them and prevent them becoming long-term, difficult to identify issues. Good testing helps to automatically check code quality against established standards. Once software becomes operational, users can supply tests that are run against any changes to the software, helping developers ensure they don't break scientific functionality during updates. And running builds and tests in a standardised environment gives guarantees of reliability and reproduceability.
 
