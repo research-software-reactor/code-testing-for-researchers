@@ -1,37 +1,28 @@
-# Opening up cloud testing for researchers
+# Opening up customised cloud testing for researchers
 
-Research software needs to be tested effectively. During development, good testing practise helps to quickly identify software problems and maintain code quality. When software is operational, ongoing testing ensures that any evolutionary changes to the software do not break required scientific functionality. Building and testing in a precisely specified environment ensures reliability and reproduceability, critical for generating publishable results.
+Research software needs to be tested effectively. When bugs are introduced during development, testing helps quickly identify them and prevent them becoming long-term, difficult to identify issues. Good testing helps to automatically check code quality against established standards. Once software becomes operational, users can supply tests that are run against any changes to the software, helping developers ensure they don't break scientific functionality during updates. And running builds and tests in a standardised environment gives guarantees of reliability and reproduceability.
 
-Cloud resources are often key to good testing, either in the form of hosted testing solutions such as [Azure pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) or through access to on-demand resources for infrequent resource-intensive tests where full-time dedicated hardware would be prohibitively expensive.
+Some research software remains untested, often due to researchers not having the time or inclination to learn technical skills needed for setting up testing services. Some research software is tested, but only on local computers maintained by the research team. In most research groups, using researcher time to run technical services is very inefficient; staff have a high level of scientific programming skill and interest, but generally have little background or interest in technical systems needed to set up and maintain a testing service and its associated hardware.
 
-Standard application development is well supported by hosted testing platforms, and large technical software projects with [Dev Ops](https://en.wikipedia.org/wiki/DevOps) support are well provided for by custom [Continuous Integration (CI)](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-continuous-integration) solutions. Research software often falls into a support hole, being far more demanding on test resources than standard applications, but developed by an individual scientist or small research team with minimal or no background in systems administration and little time or inclination to learn the skills necessary for building and maintaining a non-standard [CI]((https://docs.microsoft.com/en-us/azure/devops/learn/what-is-continuous-integration) implementation. 
+For smaller research software projects, using a cloud-hosted testing platform such as [Azure pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) may be a good solution. This is a well-established method, well documented, and with good availability of templates for configuration files. However, for many research software projects it may quickly become restrictive, and researchers looking to use such a platform should be aware of the limitations before committing too much time and effort into it. In particular, where research software needs to run larger, operationally realistic problems, the standard testing hardware provided may be too slow to complete the test within allowed time limits, or may run out of resources to run the test at all.
 
-Specific examples of this would be:
+For larger research software projects, custom testing is likely to be required. This opens up the possibility of running much larger tests on hardware that more closely resembles operational systems the software will use, perhaps through large numbers of cores, large memory, or provision of GPUs. It also opens up the potential for less frequent but long-running tests, and for archiving test environments and results to comply with reproduceability requirements. However, traditionally this has meant taking researcher time away from scientific programming and into technical learning and administration, which is generally neither desirable nor efficient.
 
-* Research software that is tested by running cut-down versions of real world problems, but still require an order of magnitude more resources than available on a standard hosted [CI]((https://docs.microsoft.com/en-us/azure/devops/learn/what-is-continuous-integration) worker node
-* Test platforms that require software to be [containerised](https://www.docker.com/resources/what-container), but none of the researchers are aware of what containers are or how to implement them beyond basic methods
-* Learning materials for deploying custom testing platforms tend to be written for a technical reader and are sufficiently opaque to scientific but non-technical researchers that they do not make use of them
-* Test platforms hosted on [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) where researchers are unaware of kubernetes and are put off by the added layer of learning needed to maintain the service
-
-Requiring an individual or small research group to set up and maintain a custom testing platform is generally an inefficient use of their time, and improving hosted testing provision to cater for research software needs is a more efficient route to take. In the case where researchers have a reasonable level of sysadmin knowledge to the point they can reasonably deploy and maintain a custom testing platform (ie, [Jenkins](https://wiki.jenkins.io/display/JENKINS/Meet+Jenkins) on [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/)) they hit problems arising from the differences between standard applications and research software. For example:
-
-* Large projects lean heavily on [github](https://en.wikipedia.org/wiki/GitHub), which temporarily disables their access due to overuse
-* Effective testing needs a variety of [Virtual Machine (VM)](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/) types, and AKS only supports a single [nodepool](https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#nodes-and-node-pools) per cluster
-* Research software containers can be very large and hence difficult to handle in cost- and time-efficient ways
-* Documentation tends to be written assuming application deployment, not research software development
+Identifying key requirements of testing research software and generating learning materials for a research group to quickly and efficiently set up and maintain testing would be very high value, freeing up high-value scientific programming time.
 
 ## Sprint objectives
 
-* Identify and submit bug reports / feature requests on [Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) where it falls short of research software requirements,
-primarily in terms of flexibility on worker node specifications
-* Identify and submit bug reports / feature requests for shortfalls in [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/) which would improve [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/)+[Jenkins](https://wiki.jenkins.io/display/JENKINS/Meet+Jenkins) for research software, in particular looking at heterogeneous worker nodes via multiple [nodepools](https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#nodes-and-node-pools)
-* Generate learning materials for handling large, low-value [container images](https://www.docker.com/resources/what-container) within [CI](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-continuous-integration)
-* Generate learning materials which reduce existing technical learning to a level that is accessable and useful to non-technical researchers
-* Use [devito](http://www.opesci.org/devito/index.html), [firedrake](https://firedrakeproject.org/), and [fluidity](http://fluidityproject.github.io/) testing as specific examples in learning materials, in particular looking at handling large (in time, and in resources) test runs and handling different languages (Python, C++, Fortran)
+Suggested learning materials to develop are:
+
+* Understanding the requirements of research software testing in terms of hardware resources, time, and data volume, so quick and accurate judgements can be made by researchers as to the suitability of hosted testing platforms
+* Identifying efficient solutions to give low-maintenance but capable custom testing platforms that can be simply replaced if they go wrong, rather than needing time and technical skills to fix
+* Identifying commonly recommended testing platforms that look interesting but are likely to end up being high cost in terms of researcher time or have inobvious issues that will cause problems for research software testing
+* Spotlighting common problems that research software testing may encounter, so researchers are primed to quickly identify and fix them if and when they occur, without having to invest valuable time in debugging
+* Lay out clearly and concisely cost considerations with using cloud resources for research software testing, helping researchers to quickly get to grips with the balance between time and cost whilst writing test configurations
+* Provide a set of clear, templated examples of research software using [container images](https://www.docker.com/resources/what-container) for standardising and archiving environments and test output; this could use [devito](http://www.opesci.org/devito/index.html), [firedrake](https://firedrakeproject.org/), and [fluidity](http://fluidityproject.github.io/) testing as specific examples, covering handling large (in time, and in resources) test runs and handling different languages (Python, C++, Fortran).
 
 ## Learning prerequisites
 
 * [Jenkins on Azure](https://docs.microsoft.com/en-us/azure/jenkins/)
-* [Docker on Azure](https://azure.microsoft.com/en-us/services/kubernetes-service/docker/)
 * [Jenkins with Docker](https://jenkins.io/doc/book/pipeline/docker/)
 * [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops)
