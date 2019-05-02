@@ -24,5 +24,8 @@ Suggested learning materials to develop are:
 ## Learning prerequisites
 
 * [Jenkins on Azure](https://docs.microsoft.com/en-us/azure/jenkins/)
-* [Jenkins with Docker](https://jenkins.io/doc/book/pipeline/docker/)
 * [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops)
+
+## Other documentation
+
+* [Jenkins with Docker](https://jenkins.io/doc/book/pipeline/docker/)
