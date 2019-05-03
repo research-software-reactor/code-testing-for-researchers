@@ -21,10 +21,10 @@ It's reasonable to assume that researchers developing software are:
 
 ## Acceptable technical learning requirements
 
-It's reasonable to require learning in specific areas:
+It's reasonable to require learning where that learning will have a longer-term ongoing benefit to the researcher and/or the project, in particular where it will yield sceintific value of direct relevance to the researcher. Ie:
 
-* Containers - very useful for testing, and likely to be of independent value for the research software project in terms of software installation and aiding long-term reproduceability of results
-* Writing test platform configuration files - assuming testing is an ongoing requirement, this will need to be changed and maintained by the researchers on an ongoing basis so they need to be familiar with it and competent and changing and fixing it. It's also primarily a programming task, so fits the assumed researcher skillset
+* Containers - likely to be of independent value by simplifying software installation (reducing support load on the research team) and aiding long-term reproduceability of results (scientific value, publication value)
+* Writing test platform configuration files - being able to update the testing configuration as requirements change is high value to the project, and a reasonbly necessary requirement to make testing useful
 
 ## Learning areas to avoid
 
