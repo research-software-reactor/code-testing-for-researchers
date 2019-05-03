@@ -10,6 +10,30 @@ For larger research software projects, custom testing is likely to be required. 
 
 Identifying key requirements of testing research software and generating learning materials for a research group to quickly and efficiently set up and maintain testing would be very high value, freeing up high-value scientific programming time.
 
+## Target demographic
+
+It's reasonable to assume that researchers developing software are:
+
+* Intelligent people who can follow instructions
+* Have basic command line skills from a user perspective
+* Skilled programmers able to adapt to straightforward new programming languages
+* Willing to learn where they will accrue long-term/ongoing benefit from the learning
+
+## Acceptable technical learning requirements
+
+It's reasonable to require learning in specific areas:
+
+* Containers - very useful for testing, and likely to be of independent value for the research software project in terms of software installation and aiding long-term reproduceability of results
+* Writing test platform configuration files - assuming testing is an ongoing requirement, this will need to be changed and maintained by the researchers on an ongoing basis so they need to be familiar with it and competent and changing and fixing it. It's also primarily a programming task, so fits the assumed researcher skillset
+
+## Learning areas to avoid
+
+In general, researchers are not systems administrators and disinterested in taking on systems roles. Thus, avoid:
+
+* Learning new platforms such as kubernetes
+* Generating ongoing sysadmin responsibilties 
+* Manual configuration of OS environments
+
 ## Sprint objectives
 
 Suggested learning materials to develop are:
